@@ -3,6 +3,7 @@ module.exports = class Electrodomestico{
         this.consumo = consumo;
         this.procedencia = procedencia;
         this.precio= 0;
+        this.calcularPrecio();
     }
 
     calcularPrecio(){
@@ -14,17 +15,13 @@ module.exports = class Electrodomestico{
         this.precio = this.precio + recargo;
     }
 
-
     precioPorProcedencia(){
         if (this.procedencia === "Nacional"){
             this.precio = this.precio+250000;
-            console.log("Producto Nacional");
         }else if(this.procedencia === "Importado"){
-            this.precio = this.precio+250000;
-            console.log("Producto Importado");
+            this.precio = this.precio+350000;
         }
     }
-
     precioPorConsumo(){
         switch (this.consumo){
             case "A":
@@ -41,5 +38,4 @@ module.exports = class Electrodomestico{
         }
     }
 
-   
 }
